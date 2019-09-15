@@ -1,0 +1,115 @@
+@import 'normalize';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	/* font-family: ''; */
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #333;
+	min-height: 100%;
+}
+
+a, button, input[type="button"], input[type="submit"] {
+	 transition:
+	 border-color .1s ease-in,
+	 color .1s ease-in,
+	 background-color .1s ease-in;
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 50px 0;
+}
+
+svg {
+	width: 100%;
+	margin: 50px 0;
+}
+
+#beetroot {
+	// fill: #77c167;
+	fill: transparent;
+	stroke: #77c167;
+	stroke-width: 1px;
+	stroke-linecap: round;
+	animation: drawBeetroot 5s ease-in-out;
+	animation-fill-mode: forwards;
+	animation-direction: normal; 
+	&:hover  {
+		animation: reDrawBeetroot 2s ease-in-out;
+		// animation-fill-mode: forwards;
+		animation-direction: normal;
+	}
+}
+
+@keyframes drawBeetroot {
+	0% {
+		stroke-dashoffset: 180;
+		stroke-dasharray: 180;
+		fill: transparent;
+	}
+	90% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 180;
+		fill: transparent;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 180;
+		fill: #77c167;
+	}
+}
+
+@keyframes reDrawBeetroot {
+	0% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 180;
+		fill: #77c167;
+	}
+	10% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 180;
+		fill: transparent;
+	}
+	100% {
+		stroke-dashoffset: 180;
+		stroke-dasharray: 180;
+	}
+}
+
+#letters {
+	// fill: #3d3935;
+	fill: transparent;
+	stroke: #3d3935;
+	stroke-width: 1px;
+	stroke-linecap: round;
+	animation: drawLetters 5s ease-in-out;
+	animation-fill-mode: forwards;
+	animation-delay: 5s;
+}
+
+@keyframes drawLetters {
+	0% {
+		stroke-dashoffset: 177;
+		stroke-dasharray: 177;
+		fill: transparent;
+	}
+	90% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		fill: #3d3935;
+	}
+}
